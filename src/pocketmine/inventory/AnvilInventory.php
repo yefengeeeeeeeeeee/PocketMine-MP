@@ -23,7 +23,7 @@ namespace pocketmine\inventory;
 
 use pocketmine\item\Item;
 use pocketmine\level\Position;
-use pocketmine\Player;
+use pocketmine\player\Player;
 
 class AnvilInventory extends TemporaryInventory{
 

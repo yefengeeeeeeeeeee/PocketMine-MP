@@ -24,7 +24,7 @@ namespace pocketmine\event\block;
 use pocketmine\block\Block;
 use pocketmine\event\Cancellable;
 use pocketmine\item\Item;
-use pocketmine\Player;
+use pocketmine\player\Player;
 use pocketmine\tile\ItemFrame;
 
 class ItemFrameDropItemEvent extends BlockEvent implements Cancellable{

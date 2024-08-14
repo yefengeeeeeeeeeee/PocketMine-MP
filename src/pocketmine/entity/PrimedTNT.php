@@ -23,15 +23,13 @@ namespace pocketmine\entity;
 
 
 use pocketmine\event\entity\EntityDamageEvent;
-
 use pocketmine\event\entity\ExplosionPrimeEvent;
 use pocketmine\level\Explosion;
 use pocketmine\level\format\FullChunk;
 use pocketmine\nbt\tag\ByteTag;
 use pocketmine\nbt\tag\CompoundTag;
-use pocketmine\network\Network;
 use pocketmine\network\protocol\AddEntityPacket;
-use pocketmine\Player;
+use pocketmine\player\Player;
 
 class PrimedTNT extends Entity implements Explosive{
 	const NETWORK_ID = 65;

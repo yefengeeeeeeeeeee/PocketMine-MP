@@ -23,7 +23,7 @@ namespace pocketmine\block;
 
 use pocketmine\item\Item;
 use pocketmine\level\Level;
-use pocketmine\Player;
+use pocketmine\player\Player;
 
 class Torch extends Flowable{
 

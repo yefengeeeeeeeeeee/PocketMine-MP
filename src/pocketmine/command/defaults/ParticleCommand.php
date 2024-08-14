@@ -42,7 +42,6 @@ use pocketmine\level\particle\ItemBreakParticle;
 use pocketmine\level\particle\LargeExplodeParticle;
 use pocketmine\level\particle\LavaDripParticle;
 use pocketmine\level\particle\LavaParticle;
-use pocketmine\level\particle\Particle;
 use pocketmine\level\particle\PortalParticle;
 use pocketmine\level\particle\RainSplashParticle;
 use pocketmine\level\particle\RedstoneParticle;
@@ -53,7 +52,7 @@ use pocketmine\level\particle\TerrainParticle;
 use pocketmine\level\particle\WaterDripParticle;
 use pocketmine\level\particle\WaterParticle;
 use pocketmine\math\Vector3;
-use pocketmine\Player;
+use pocketmine\player\Player;
 use pocketmine\utils\Random;
 use pocketmine\utils\TextFormat;
 

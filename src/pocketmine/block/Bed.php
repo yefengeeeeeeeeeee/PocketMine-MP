@@ -25,7 +25,7 @@ use pocketmine\item\Item;
 use pocketmine\level\Explosion;
 use pocketmine\level\Level;
 use pocketmine\math\AxisAlignedBB;
-use pocketmine\Player;
+use pocketmine\player\Player;
 use pocketmine\utils\TextFormat;
 
 class Bed extends Transparent{

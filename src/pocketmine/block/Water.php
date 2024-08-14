@@ -23,7 +23,7 @@ namespace pocketmine\block;
 
 use pocketmine\entity\Entity;
 use pocketmine\item\Item;
-use pocketmine\Player;
+use pocketmine\player\Player;
 
 class Water extends Liquid{
 

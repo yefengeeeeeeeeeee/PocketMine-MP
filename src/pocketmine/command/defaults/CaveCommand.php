@@ -31,7 +31,7 @@ use pocketmine\item\Item;
 use pocketmine\level\Level;
 use pocketmine\level\Position;
 use pocketmine\math\Vector3;
-use pocketmine\Player;
+use pocketmine\player\Player;
 use pocketmine\utils\TextFormat;
 
 class CaveCommand extends VanillaCommand{

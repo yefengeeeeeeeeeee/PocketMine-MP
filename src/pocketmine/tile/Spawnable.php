@@ -24,9 +24,8 @@ namespace pocketmine\tile;
 use pocketmine\level\format\FullChunk;
 use pocketmine\nbt\NBT;
 use pocketmine\nbt\tag\CompoundTag;
-use pocketmine\network\Network;
 use pocketmine\network\protocol\BlockEntityDataPacket;
-use pocketmine\Player;
+use pocketmine\player\Player;
 
 abstract class Spawnable extends Tile{
 

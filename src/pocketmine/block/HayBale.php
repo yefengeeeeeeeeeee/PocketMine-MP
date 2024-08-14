@@ -22,7 +22,7 @@
 namespace pocketmine\block;
 
 use pocketmine\item\Item;
-use pocketmine\Player;
+use pocketmine\player\Player;
 
 class HayBale extends Solid{
 

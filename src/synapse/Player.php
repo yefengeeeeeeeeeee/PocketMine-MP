@@ -22,7 +22,6 @@
 namespace synapse;
 
 use pocketmine\entity\Entity;
-use pocketmine\entity\Human;
 use pocketmine\event\player\PlayerLoginEvent;
 use pocketmine\item\Item;
 use pocketmine\level\Level;
@@ -33,26 +32,22 @@ use pocketmine\nbt\tag\IntTag;
 use pocketmine\nbt\tag\LongTag;
 use pocketmine\nbt\tag\ShortTag;
 use pocketmine\nbt\tag\StringTag;
-use pocketmine\network\protocol\ChangeDimensionPacket;
 use pocketmine\network\protocol\ContainerSetContentPacket;
 use pocketmine\network\protocol\DataPacket;
 use pocketmine\network\protocol\PlayerListPacket;
-use pocketmine\network\protocol\PlayStatusPacket;
-use pocketmine\network\protocol\RespawnPacket;
 use pocketmine\network\protocol\SetDifficultyPacket;
 use pocketmine\network\protocol\SetEntityDataPacket;
-use pocketmine\network\protocol\SetHealthPacket;
 use pocketmine\network\protocol\SetPlayerGameTypePacket;
 use pocketmine\network\protocol\SetSpawnPositionPacket;
 use pocketmine\network\protocol\SetTimePacket;
-use pocketmine\Player as PMPlayer;
+use pocketmine\player\Player as PMPlayer;
 use pocketmine\Server;
 use pocketmine\utils\TextFormat;
 use pocketmine\utils\UUID;
 use synapse\event\player\PlayerConnectEvent;
+use synapse\network\protocol\spp\FastPlayerListPacket;
 use synapse\network\protocol\spp\PlayerLoginPacket;
 use synapse\network\protocol\spp\TransferPacket;
-use synapse\network\protocol\spp\FastPlayerListPacket;
 
 class Player extends PMPlayer{
 	private $isFirstTimeLogin = false;

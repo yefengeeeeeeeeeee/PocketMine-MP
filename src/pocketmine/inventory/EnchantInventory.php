@@ -31,9 +31,8 @@ use pocketmine\item\enchantment\EnchantmentList;
 use pocketmine\item\Item;
 use pocketmine\level\Level;
 use pocketmine\level\Position;
-use pocketmine\math\Vector3;
 use pocketmine\network\protocol\CraftingDataPacket;
-use pocketmine\Player;
+use pocketmine\player\Player;
 use pocketmine\Server;
 use pocketmine\tile\EnchantTable;
 

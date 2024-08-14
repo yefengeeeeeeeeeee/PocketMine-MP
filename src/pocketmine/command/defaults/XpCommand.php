@@ -25,7 +25,7 @@ use pocketmine\command\CommandSender;
 use pocketmine\command\ConsoleCommandSender;
 use pocketmine\event\TranslationContainer;
 use pocketmine\level\sound\ExpPickupSound;
-use pocketmine\Player;
+use pocketmine\player\Player;
 use pocketmine\utils\TextFormat;
 
 class XpCommand extends VanillaCommand{

@@ -24,9 +24,8 @@ namespace pocketmine\entity;
 
 use pocketmine\level\format\FullChunk;
 use pocketmine\nbt\tag\CompoundTag;
-use pocketmine\network\Network;
 use pocketmine\network\protocol\AddEntityPacket;
-use pocketmine\Player;
+use pocketmine\player\Player;
 
 class Snowball extends Projectile{
 	const NETWORK_ID = 81;

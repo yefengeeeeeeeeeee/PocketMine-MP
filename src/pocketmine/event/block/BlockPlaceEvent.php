@@ -24,7 +24,7 @@ namespace pocketmine\event\block;
 use pocketmine\block\Block;
 use pocketmine\event\Cancellable;
 use pocketmine\item\Item;
-use pocketmine\Player;
+use pocketmine\player\Player;
 
 /**
  * Called when a player places a block
@@ -32,7 +32,7 @@ use pocketmine\Player;
 class BlockPlaceEvent extends BlockEvent implements Cancellable{
 	public static $handlerList = null;
 
-	/** @var \pocketmine\Player */
+	/** @var \pocketmine\player\Player */
 	protected $player;
 
 	/** @var \pocketmine\item\Item */

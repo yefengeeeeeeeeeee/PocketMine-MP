@@ -25,13 +25,12 @@ use pocketmine\entity\Entity;
 use pocketmine\item\Item;
 use pocketmine\level\Level;
 use pocketmine\level\sound\TNTPrimeSound;
-use pocketmine\math\Vector3;
 use pocketmine\nbt\tag\ByteTag;
 use pocketmine\nbt\tag\CompoundTag;
 use pocketmine\nbt\tag\DoubleTag;
-use pocketmine\nbt\tag\ListTag;
 use pocketmine\nbt\tag\FloatTag;
-use pocketmine\Player;
+use pocketmine\nbt\tag\ListTag;
+use pocketmine\player\Player;
 use pocketmine\utils\Random;
 
 class TNT extends Solid implements ElectricalAppliance{

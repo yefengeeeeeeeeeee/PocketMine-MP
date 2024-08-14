@@ -22,14 +22,14 @@
 namespace pocketmine\block;
 
 use pocketmine\item\Item;
+use pocketmine\nbt\tag\ByteTag;
 use pocketmine\nbt\tag\CompoundTag;
 use pocketmine\nbt\tag\FloatTag;
 use pocketmine\nbt\tag\IntTag;
-use pocketmine\nbt\tag\ByteTag;
 use pocketmine\nbt\tag\StringTag;
-use pocketmine\tile\Tile;
+use pocketmine\player\Player;
 use pocketmine\tile\ItemFrame as ItemFrameTile;
-use pocketmine\Player;
+use pocketmine\tile\Tile;
 
 class ItemFrame extends Transparent{
 	protected $id = self::ITEM_FRAME_BLOCK;

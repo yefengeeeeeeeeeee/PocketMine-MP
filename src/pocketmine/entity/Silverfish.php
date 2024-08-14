@@ -22,7 +22,7 @@
 namespace pocketmine\entity;
 
 use pocketmine\network\protocol\AddEntityPacket;
-use pocketmine\Player;
+use pocketmine\player\Player;
 
 class Silverfish extends Monster{
 	const NETWORK_ID = 39;

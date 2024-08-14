@@ -26,7 +26,7 @@ use pocketmine\level\Level;
 use pocketmine\level\sound\DoorSound;
 use pocketmine\math\AxisAlignedBB;
 use pocketmine\math\Vector3;
-use pocketmine\Player;
+use pocketmine\player\Player;
 
 
 abstract class Door extends Transparent implements ElectricalAppliance{

@@ -28,14 +28,13 @@ use pocketmine\block\SnowLayer;
 use pocketmine\event\entity\EntityBlockChangeEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\entity\EntityDamageEvent;
-
 use pocketmine\item\Item as ItemItem;
 use pocketmine\level\sound\AnvilFallSound;
 use pocketmine\math\Vector3;
 use pocketmine\nbt\tag\ByteTag;
 use pocketmine\nbt\tag\IntTag;
 use pocketmine\network\protocol\AddEntityPacket;
-use pocketmine\Player;
+use pocketmine\player\Player;
 
 class FallingSand extends Entity{
 	const NETWORK_ID = 66;

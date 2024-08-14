@@ -21,12 +21,11 @@
 
 namespace pocketmine\entity;
 
-use pocketmine\nbt\tag\ByteTag;
-use pocketmine\nbt\tag\IntTag;
 use pocketmine\level\format\FullChunk;
+use pocketmine\nbt\tag\ByteTag;
 use pocketmine\nbt\tag\CompoundTag;
 use pocketmine\network\protocol\AddEntityPacket;
-use pocketmine\Player;
+use pocketmine\player\Player;
 
 class Villager extends Creature implements NPC, Ageable{
 	const PROFESSION_FARMER = 0;

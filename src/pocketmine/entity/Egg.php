@@ -23,8 +23,8 @@ namespace pocketmine\entity;
 
 use pocketmine\level\format\FullChunk;
 use pocketmine\nbt\tag\CompoundTag;
-use pocketmine\Player;
 use pocketmine\network\protocol\AddEntityPacket;
+use pocketmine\player\Player;
 
 class Egg extends Projectile{
 	const NETWORK_ID = 82;

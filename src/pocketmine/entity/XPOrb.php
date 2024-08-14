@@ -24,7 +24,7 @@ namespace pocketmine\entity;
 use pocketmine\event\player\PlayerPickupExpOrbEvent;
 use pocketmine\level\sound\ExpPickupSound;
 use pocketmine\network\protocol\AddEntityPacket;
-use pocketmine\Player;
+use pocketmine\player\Player;
 
 class XPOrb extends Entity{
 	const NETWORK_ID = 69;

@@ -22,10 +22,9 @@
 namespace pocketmine\inventory;
 
 use pocketmine\math\Vector3;
-use pocketmine\network\Network;
 use pocketmine\network\protocol\ContainerClosePacket;
 use pocketmine\network\protocol\ContainerOpenPacket;
-use pocketmine\Player;
+use pocketmine\player\Player;
 
 abstract class ContainerInventory extends BaseInventory{
 	public function onOpen(Player $who){

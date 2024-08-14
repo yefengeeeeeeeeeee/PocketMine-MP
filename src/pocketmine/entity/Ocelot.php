@@ -21,11 +21,11 @@
 
 namespace pocketmine\entity;
 
-use pocketmine\nbt\tag\ByteTag;
-use pocketmine\network\protocol\AddEntityPacket;
 use pocketmine\level\format\FullChunk;
+use pocketmine\nbt\tag\ByteTag;
 use pocketmine\nbt\tag\CompoundTag;
-use pocketmine\Player;
+use pocketmine\network\protocol\AddEntityPacket;
+use pocketmine\player\Player;
 
 class Ocelot extends Animal{
 	const NETWORK_ID = 22;

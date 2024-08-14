@@ -28,7 +28,7 @@ use pocketmine\level\particle\MobSpellParticle;
 use pocketmine\nbt\tag\CompoundTag;
 use pocketmine\nbt\tag\ShortTag;
 use pocketmine\network\protocol\AddEntityPacket;
-use pocketmine\Player;
+use pocketmine\player\Player;
 
 class Arrow extends Projectile{
 	const NETWORK_ID = 80;

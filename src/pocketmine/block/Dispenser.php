@@ -25,10 +25,10 @@ use pocketmine\item\Item;
 use pocketmine\item\Tool;
 use pocketmine\nbt\NBT;
 use pocketmine\nbt\tag\CompoundTag;
-use pocketmine\nbt\tag\ListTag;
 use pocketmine\nbt\tag\IntTag;
+use pocketmine\nbt\tag\ListTag;
 use pocketmine\nbt\tag\StringTag;
-use pocketmine\Player;
+use pocketmine\player\Player;
 use pocketmine\tile\Dispenser as TileDispenser;
 use pocketmine\tile\Tile;
 

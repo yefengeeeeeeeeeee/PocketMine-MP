@@ -27,7 +27,7 @@ use pocketmine\event\entity\EntityCombustByBlockEvent;
 use pocketmine\event\entity\EntityDamageByBlockEvent;
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\item\Item;
-use pocketmine\Player;
+use pocketmine\player\Player;
 use pocketmine\Server;
 
 class Lava extends Liquid{

@@ -26,7 +26,7 @@ use pocketmine\event\TranslationContainer;
 use pocketmine\level\format\mcregion\McRegion;
 use pocketmine\level\Level;
 use pocketmine\level\Position;
-use pocketmine\Player;
+use pocketmine\player\Player;
 use pocketmine\utils\TextFormat;
 
 class ChunkInfoCommand extends VanillaCommand{

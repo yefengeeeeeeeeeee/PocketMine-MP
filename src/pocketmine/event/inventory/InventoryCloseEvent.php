@@ -22,7 +22,7 @@
 namespace pocketmine\event\inventory;
 
 use pocketmine\inventory\Inventory;
-use pocketmine\Player;
+use pocketmine\player\Player;
 
 class InventoryCloseEvent extends InventoryEvent{
 	public static $handlerList = null;

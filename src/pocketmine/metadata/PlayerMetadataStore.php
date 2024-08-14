@@ -21,7 +21,7 @@
 
 namespace pocketmine\metadata;
 
-use pocketmine\IPlayer;
+use pocketmine\player\IPlayer;
 
 class PlayerMetadataStore extends MetadataStore{
 

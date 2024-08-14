@@ -19,17 +19,17 @@
  *
 */
 
-namespace pocketmine;
+namespace pocketmine\player;
 
-use pocketmine\block\Block;
+use pocketmine\Achievement;
 use pocketmine\block\Air;
+use pocketmine\block\Block;
 use pocketmine\block\Fire;
 use pocketmine\block\PressurePlate;
 use pocketmine\command\CommandSender;
 use pocketmine\entity\Animal;
 use pocketmine\entity\Arrow;
 use pocketmine\entity\Attribute;
-use pocketmine\entity\AttributeMap;
 use pocketmine\entity\Boat;
 use pocketmine\entity\Effect;
 use pocketmine\entity\Entity;
@@ -48,15 +48,12 @@ use pocketmine\event\entity\EntityCombustByEntityEvent;
 use pocketmine\event\entity\EntityDamageByBlockEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\entity\EntityDamageEvent;
-use pocketmine\event\entity\EntityRegainHealthEvent;
 use pocketmine\event\entity\EntityShootBowEvent;
 use pocketmine\event\entity\ProjectileLaunchEvent;
 use pocketmine\event\inventory\CraftItemEvent;
 use pocketmine\event\inventory\InventoryCloseEvent;
 use pocketmine\event\inventory\InventoryPickupArrowEvent;
 use pocketmine\event\inventory\InventoryPickupItemEvent;
-use pocketmine\event\player\PlayerExhaustEvent;
-use pocketmine\event\player\PlayerTextPreSendEvent;
 use pocketmine\event\player\PlayerAchievementAwardedEvent;
 use pocketmine\event\player\PlayerAnimationEvent;
 use pocketmine\event\player\PlayerBedEnterEvent;
@@ -65,8 +62,8 @@ use pocketmine\event\player\PlayerChatEvent;
 use pocketmine\event\player\PlayerCommandPreprocessEvent;
 use pocketmine\event\player\PlayerDeathEvent;
 use pocketmine\event\player\PlayerDropItemEvent;
+use pocketmine\event\player\PlayerExhaustEvent;
 use pocketmine\event\player\PlayerGameModeChangeEvent;
-use pocketmine\event\player\PlayerHungerChangeEvent;
 use pocketmine\event\player\PlayerInteractEvent;
 use pocketmine\event\player\PlayerItemConsumeEvent;
 use pocketmine\event\player\PlayerJoinEvent;
@@ -76,6 +73,7 @@ use pocketmine\event\player\PlayerMoveEvent;
 use pocketmine\event\player\PlayerPreLoginEvent;
 use pocketmine\event\player\PlayerQuitEvent;
 use pocketmine\event\player\PlayerRespawnEvent;
+use pocketmine\event\player\PlayerTextPreSendEvent;
 use pocketmine\event\player\PlayerToggleSneakEvent;
 use pocketmine\event\player\PlayerToggleSprintEvent;
 use pocketmine\event\player\PlayerUseFishingRodEvent;
@@ -93,13 +91,10 @@ use pocketmine\inventory\EnchantInventory;
 use pocketmine\inventory\FurnaceInventory;
 use pocketmine\inventory\Inventory;
 use pocketmine\inventory\InventoryHolder;
-use pocketmine\inventory\PlayerInventory;
 use pocketmine\inventory\ShapedRecipe;
 use pocketmine\inventory\ShapelessRecipe;
 use pocketmine\item\enchantment\Enchantment;
-use pocketmine\item\FoodSource;
 use pocketmine\item\Item;
-use pocketmine\item\Potion;
 use pocketmine\level\ChunkLoader;
 use pocketmine\level\format\FullChunk;
 use pocketmine\level\Level;
@@ -114,9 +109,9 @@ use pocketmine\nbt\NBT;
 use pocketmine\nbt\tag\ByteTag;
 use pocketmine\nbt\tag\CompoundTag;
 use pocketmine\nbt\tag\DoubleTag;
-use pocketmine\nbt\tag\ListTag;
 use pocketmine\nbt\tag\FloatTag;
 use pocketmine\nbt\tag\IntTag;
+use pocketmine\nbt\tag\ListTag;
 use pocketmine\nbt\tag\LongTag;
 use pocketmine\nbt\tag\ShortTag;
 use pocketmine\nbt\tag\StringTag;
@@ -124,10 +119,9 @@ use pocketmine\network\Network;
 use pocketmine\network\protocol\AdventureSettingsPacket;
 use pocketmine\network\protocol\AnimatePacket;
 use pocketmine\network\protocol\BatchPacket;
-use pocketmine\network\protocol\ChunkRadiusUpdatedPacket;
-use pocketmine\network\protocol\ContainerClosePacket;
-use pocketmine\network\protocol\ContainerSetContentPacket;
 use pocketmine\network\protocol\ChangeDimensionPacket;
+use pocketmine\network\protocol\ChunkRadiusUpdatedPacket;
+use pocketmine\network\protocol\ContainerSetContentPacket;
 use pocketmine\network\protocol\DataPacket;
 use pocketmine\network\protocol\DisconnectPacket;
 use pocketmine\network\protocol\EntityEventPacket;
@@ -139,21 +133,23 @@ use pocketmine\network\protocol\PlayerActionPacket;
 use pocketmine\network\protocol\PlayStatusPacket;
 use pocketmine\network\protocol\RespawnPacket;
 use pocketmine\network\protocol\SetDifficultyPacket;
-use pocketmine\network\protocol\SetEntityMotionPacket;
 use pocketmine\network\protocol\SetEntityDataPacket;
+use pocketmine\network\protocol\SetEntityMotionPacket;
 use pocketmine\network\protocol\SetHealthPacket;
+use pocketmine\network\protocol\SetPlayerGameTypePacket;
 use pocketmine\network\protocol\SetSpawnPositionPacket;
 use pocketmine\network\protocol\SetTimePacket;
 use pocketmine\network\protocol\StartGamePacket;
-use pocketmine\network\protocol\SetPlayerGameTypePacket;
 use pocketmine\network\protocol\TakeItemEntityPacket;
 use pocketmine\network\protocol\TextPacket;
 use pocketmine\network\protocol\UpdateAttributesPacket;
 use pocketmine\network\protocol\UpdateBlockPacket;
 use pocketmine\network\SourceInterface;
+use pocketmine\permission;
 use pocketmine\permission\PermissibleBase;
 use pocketmine\permission\PermissionAttachment;
 use pocketmine\plugin\Plugin;
+use pocketmine\Server;
 use pocketmine\tile\ItemFrame;
 use pocketmine\tile\Sign;
 use pocketmine\tile\Spawnable;
@@ -453,12 +449,14 @@ class Player extends Human implements CommandSender, InventoryHolder, ChunkLoade
 		return $this->clientSecret;
 	}
 
-	public function isBanned(){
+	public function isBanned(): bool
+    {
 		return $this->server->getNameBans()->isBanned(strtolower($this->getName()));
 	}
 
-	public function setBanned($value){
-		if($value === true){
+	public function setBanned(bool $banned): void
+    {
+		if($banned === true){
 			$this->server->getNameBans()->addBan($this->getName(), null, null, null);
 			$this->kick(TextFormat::RED . "You have been banned");
 		}else{
@@ -470,7 +468,8 @@ class Player extends Human implements CommandSender, InventoryHolder, ChunkLoade
 		return $this->server->isWhitelisted(strtolower($this->getName()));
 	}
 
-	public function setWhitelisted($value){
+	public function setWhitelisted(bool $value): void
+    {
 		if($value === true){
 			$this->server->addWhitelist(strtolower($this->getName()));
 		}else{
@@ -478,19 +477,23 @@ class Player extends Human implements CommandSender, InventoryHolder, ChunkLoade
 		}
 	}
 
-	public function getPlayer(){
+	public function getPlayer(): ?Player
+    {
 		return $this;
 	}
 
-	public function getFirstPlayed(){
+	public function getFirstPlayed(): float|int|null
+    {
 		return $this->namedtag instanceof CompoundTag ? $this->namedtag["firstPlayed"] : null;
 	}
 
-	public function getLastPlayed(){
+	public function getLastPlayed(): float|int|null
+    {
 		return $this->namedtag instanceof CompoundTag ? $this->namedtag["lastPlayed"] : null;
 	}
 
-	public function hasPlayedBefore(){
+	public function hasPlayedBefore(): bool
+    {
 		return $this->playedBefore;
 	}
 
@@ -3823,10 +3826,9 @@ class Player extends Human implements CommandSender, InventoryHolder, ChunkLoade
 
 	/**
 	 * Gets the username
-	 *
-	 * @return string
 	 */
-	public function getName(){
+	public function getName(): string
+    {
 		return $this->username;
 	}
 

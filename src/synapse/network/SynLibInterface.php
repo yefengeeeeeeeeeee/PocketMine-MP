@@ -23,7 +23,7 @@ namespace synapse\network;
 
 use pocketmine\network\protocol\DataPacket;
 use pocketmine\network\SourceInterface;
-use pocketmine\Player;
+use pocketmine\player\Player;
 use synapse\network\protocol\spp\RedirectPacket;
 use synapse\Synapse;
 

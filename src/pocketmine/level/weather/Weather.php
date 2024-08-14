@@ -25,7 +25,7 @@ use pocketmine\event\level\WeatherChangeEvent;
 use pocketmine\level\Level;
 use pocketmine\math\Vector3;
 use pocketmine\network\protocol\LevelEventPacket;
-use pocketmine\Player;
+use pocketmine\player\Player;
 
 class Weather{
 	const CLEAR = 0;

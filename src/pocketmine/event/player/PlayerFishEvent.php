@@ -24,7 +24,7 @@ namespace pocketmine\event\player;
 use pocketmine\entity\FishingHook;
 use pocketmine\event\Cancellable;
 use pocketmine\item\Item;
-use pocketmine\Player;
+use pocketmine\player\Player;
 
 /**
  * Called when a player uses the fishing rod

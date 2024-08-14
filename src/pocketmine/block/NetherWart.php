@@ -22,10 +22,10 @@
 namespace pocketmine\block;
 
 use pocketmine\event\block\BlockGrowEvent;
+use pocketmine\item\enchantment\enchantment;
 use pocketmine\item\Item;
 use pocketmine\level\Level;
-use pocketmine\item\enchantment\enchantment;
-use pocketmine\Player;
+use pocketmine\player\Player;
 use pocketmine\Server;
 
 class NetherWart extends Flowable{

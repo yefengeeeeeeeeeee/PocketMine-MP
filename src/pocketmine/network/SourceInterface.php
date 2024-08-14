@@ -25,7 +25,7 @@
 namespace pocketmine\network;
 
 use pocketmine\network\protocol\DataPacket;
-use pocketmine\Player;
+use pocketmine\player\Player;
 
 /**
  * Classes that implement this interface will be able to be attached to players

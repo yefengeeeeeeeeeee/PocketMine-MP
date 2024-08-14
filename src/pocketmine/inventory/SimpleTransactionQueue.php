@@ -22,8 +22,7 @@
 namespace pocketmine\inventory;
 
 use pocketmine\event\inventory\InventoryTransactionEvent;
-use pocketmine\item\Item;
-use pocketmine\Player;
+use pocketmine\player\Player;
 
 class SimpleTransactionQueue implements TransactionQueue{
 

@@ -39,6 +39,9 @@ class CrashDump{
 	private $path;
 
 	public function __construct(Server $server){
+        if (!file_exists($server->getDataPath() . "crashdumps/")) {
+            mkdir($server->getDataPath() . "crashdumps/");
+        }
 		$this->time = time();
 		$this->server = $server;
 		$this->path = $this->server->getCrashPath() . "CrashDump_" . date("D_M_j-H.i.s-T_Y", $this->time) . ".log";

@@ -27,7 +27,7 @@ use pocketmine\event\TranslationContainer;
 use pocketmine\item\Item;
 use pocketmine\nbt\NBT;
 use pocketmine\nbt\tag\CompoundTag;
-use pocketmine\Player;
+use pocketmine\player\Player;
 use pocketmine\utils\TextFormat;
 
 class GiveCommand extends VanillaCommand{

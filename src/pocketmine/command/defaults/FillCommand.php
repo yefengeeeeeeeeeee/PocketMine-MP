@@ -21,15 +21,14 @@
 
 namespace pocketmine\command\defaults;
 
-use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\event\TranslationContainer;
-use pocketmine\Player;
-use pocketmine\utils\TextFormat;
-use pocketmine\math\Vector3;
-use pocketmine\item\ItemBlock;
 use pocketmine\item\Item;
+use pocketmine\item\ItemBlock;
 use pocketmine\level\Level;
+use pocketmine\math\Vector3;
+use pocketmine\player\Player;
+use pocketmine\utils\TextFormat;
 
 class FillCommand extends VanillaCommand{
 

@@ -21,11 +21,11 @@
 
 namespace pocketmine\block;
 
-use pocketmine\item\Tool;
 use pocketmine\item\Item;
+use pocketmine\item\Tool;
 use pocketmine\level\sound\NoteblockSound;
 use pocketmine\math\Vector3;
-use pocketmine\Player;
+use pocketmine\player\Player;
 
 class Noteblock extends Solid implements ElectricalAppliance{
 	protected $id = self::NOTEBLOCK;

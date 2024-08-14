@@ -22,7 +22,7 @@
 namespace pocketmine\entity;
 
 use pocketmine\network\protocol\AddEntityPacket;
-use pocketmine\Player;
+use pocketmine\player\Player;
 
 class MinecartTNT extends Minecart{
 	const NETWORK_ID = 97;

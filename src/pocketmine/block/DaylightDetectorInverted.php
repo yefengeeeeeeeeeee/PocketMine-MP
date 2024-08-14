@@ -22,7 +22,7 @@
 namespace pocketmine\block;
 
 use pocketmine\item\Item;
-use pocketmine\Player;
+use pocketmine\player\Player;
 
 class DaylightDetectorInverted extends DaylightDetector{
 	protected $id = self::DAYLIGHT_SENSOR_INVERTED;

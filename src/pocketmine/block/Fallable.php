@@ -28,10 +28,10 @@ use pocketmine\math\Vector3;
 use pocketmine\nbt\tag\ByteTag;
 use pocketmine\nbt\tag\CompoundTag;
 use pocketmine\nbt\tag\DoubleTag;
-use pocketmine\nbt\tag\ListTag;
 use pocketmine\nbt\tag\FloatTag;
 use pocketmine\nbt\tag\IntTag;
-use pocketmine\Player;
+use pocketmine\nbt\tag\ListTag;
+use pocketmine\player\Player;
 
 abstract class Fallable extends Solid{
 

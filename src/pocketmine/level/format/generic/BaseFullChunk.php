@@ -28,7 +28,7 @@ use pocketmine\level\format\LevelProvider;
 use pocketmine\level\generator\biome\Biome;
 use pocketmine\level\Level;
 use pocketmine\nbt\tag\CompoundTag;
-use pocketmine\Player;
+use pocketmine\player\Player;
 use pocketmine\tile\Tile;
 
 

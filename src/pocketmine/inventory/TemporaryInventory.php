@@ -21,7 +21,7 @@
 
 namespace pocketmine\inventory;
 
-use pocketmine\Player;
+use pocketmine\player\Player;
 
 abstract class TemporaryInventory extends ContainerInventory{
 	//TODO

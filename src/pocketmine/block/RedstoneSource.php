@@ -24,7 +24,7 @@ namespace pocketmine\block;
 use pocketmine\item\Item;
 use pocketmine\level\Level;
 use pocketmine\math\Vector3;
-use pocketmine\Player;
+use pocketmine\player\Player;
 
 /*
  * This class is the power of all redstone blocks!

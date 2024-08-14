@@ -22,7 +22,7 @@
 namespace pocketmine\inventory;
 
 use pocketmine\item\Item;
-use pocketmine\Player;
+use pocketmine\player\Player;
 
 class BaseTransaction implements Transaction{
 	/** @var Inventory */

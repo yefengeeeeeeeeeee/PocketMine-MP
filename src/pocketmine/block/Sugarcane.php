@@ -25,7 +25,7 @@ use pocketmine\event\block\BlockGrowEvent;
 use pocketmine\item\Item;
 use pocketmine\level\Level;
 use pocketmine\math\Vector3 as Vector3;
-use pocketmine\Player;
+use pocketmine\player\Player;
 use pocketmine\Server;
 
 class Sugarcane extends Flowable{

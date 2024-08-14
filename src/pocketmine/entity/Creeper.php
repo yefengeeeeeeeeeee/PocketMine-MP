@@ -25,7 +25,7 @@ namespace pocketmine\entity;
 use pocketmine\event\entity\CreeperPowerEvent;
 use pocketmine\nbt\tag\ByteTag;
 use pocketmine\network\protocol\AddEntityPacket;
-use pocketmine\Player;
+use pocketmine\player\Player;
 
 class Creeper extends Monster{
 	const NETWORK_ID = 33;

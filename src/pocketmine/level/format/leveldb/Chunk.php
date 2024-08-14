@@ -24,7 +24,7 @@ namespace pocketmine\level\format\leveldb;
 use pocketmine\level\format\generic\BaseFullChunk;
 use pocketmine\level\format\LevelProvider;
 use pocketmine\nbt\NBT;
-use pocketmine\Player;
+use pocketmine\player\Player;
 use pocketmine\utils\Binary;
 use pocketmine\utils\BinaryStream;
 

@@ -21,7 +21,6 @@
 
 namespace pocketmine\network;
 
-use pocketmine\Player;
 use pocketmine\scheduler\AsyncTask;
 use pocketmine\Server;
 

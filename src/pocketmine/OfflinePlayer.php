@@ -22,9 +22,10 @@
 namespace pocketmine;
 
 
-use pocketmine\metadata\MetadataValue;
 use pocketmine\metadata\Metadatable;
+use pocketmine\metadata\MetadataValue;
 use pocketmine\nbt\tag\CompoundTag;
+use pocketmine\player\IPlayer;
 use pocketmine\plugin\Plugin;
 
 class OfflinePlayer implements IPlayer, Metadatable{
@@ -79,8 +80,8 @@ class OfflinePlayer implements IPlayer, Metadatable{
 		return $this->server->getNameBans()->isBanned(strtolower($this->getName()));
 	}
 
-	public function setBanned($value){
-		if($value === true){
+	public function setBanned(bool $banned){
+		if($banned === true){
 			$this->server->getNameBans()->addBan($this->getName(), null, null, null);
 		}else{
 			$this->server->getNameBans()->remove($this->getName());
@@ -91,7 +92,7 @@ class OfflinePlayer implements IPlayer, Metadatable{
 		return $this->server->isWhitelisted(strtolower($this->getName()));
 	}
 
-	public function setWhitelisted($value){
+	public function setWhitelisted(bool $value){
 		if($value === true){
 			$this->server->addWhitelist(strtolower($this->getName()));
 		}else{

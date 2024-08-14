@@ -22,6 +22,7 @@
 namespace pocketmine;
 
 use pocketmine\event\TranslationContainer;
+use pocketmine\player\Player;
 use pocketmine\utils\TextFormat;
 
 /**

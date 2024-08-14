@@ -19,60 +19,31 @@
  *
 */
 
-namespace pocketmine;
+declare(strict_types=1);
+
+namespace pocketmine\player;
 
 use pocketmine\permission\ServerOperator;
 
-interface IPlayer extends ServerOperator{
+interface IPlayer extends ServerOperator
+{
+    public function isOnline(): bool;
 
-	/**
-	 * @return bool
-	 */
-	public function isOnline();
+    public function getName(): string;
 
-	/**
-	 * @return string
-	 */
-	public function getName();
+    public function isBanned(): bool;
 
-	/**
-	 * @return bool
-	 */
-	public function isBanned();
+    public function setBanned(bool $banned): void;
 
-	/**
-	 * @param bool $banned
-	 */
-	public function setBanned($banned);
+    public function isWhitelisted(): bool;
 
-	/**
-	 * @return bool
-	 */
-	public function isWhitelisted();
+    public function setWhitelisted(bool $value): void;
 
-	/**
-	 * @param bool $value
-	 */
-	public function setWhitelisted($value);
+    public function getPlayer(): ?Player;
 
-	/**
-	 * @return Player|null
-	 */
-	public function getPlayer();
+    public function getFirstPlayed(): float|int|null;
 
-	/**
-	 * @return int|double
-	 */
-	public function getFirstPlayed();
+    public function getLastPlayed(): float|int|null;
 
-	/**
-	 * @return int|double
-	 */
-	public function getLastPlayed();
-
-	/**
-	 * @return mixed
-	 */
-	public function hasPlayedBefore();
-
+    public function hasPlayedBefore(): mixed;
 }

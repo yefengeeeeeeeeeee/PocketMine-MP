@@ -23,13 +23,12 @@ namespace pocketmine\entity;
 
 
 use pocketmine\event\entity\EntityDamageByEntityEvent;
-use pocketmine\item\Item as ItemItem;
-use pocketmine\item\enchantment\Enchantment;
-use pocketmine\network\Network;
-use pocketmine\network\protocol\AddEntityPacket;
-use pocketmine\Player;
-use pocketmine\math\Vector3;
 use pocketmine\event\entity\EntityDamageEvent;
+use pocketmine\item\enchantment\Enchantment;
+use pocketmine\item\Item as ItemItem;
+use pocketmine\math\Vector3;
+use pocketmine\network\protocol\AddEntityPacket;
+use pocketmine\player\Player;
 
 class Zombie extends Monster{
 	const NETWORK_ID = 32;
